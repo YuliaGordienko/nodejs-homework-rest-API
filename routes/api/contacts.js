@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const createError = require("http-errors");
 const Joi = require("joi");
-const contactsOperations = require("../../contacts");
+const contactsOperations = require("../../models/contacts");
 const joiSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().required(),
