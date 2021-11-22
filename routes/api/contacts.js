@@ -4,6 +4,7 @@ const {
   validation,
   controllerWrapper,
   authenticate,
+  upload,
 } = require("../../middlewares");
 const { contacts: ctrl } = require("../../controllers");
 const { joiContactsSchema } = require("../../modelSchema/contact");
@@ -27,7 +28,12 @@ router.put(
   validation(joiContactsSchema),
   controllerWrapper(ctrl.put)
 );
-
+router.patch(
+  "/:id/image",
+  authenticate,
+  upload.single("image"),
+  controllerWrapper(ctrl.updateImage)
+);
 router.patch(
   "/:id/:favorite",
   authenticate,
