@@ -5,7 +5,7 @@ const getAll = async (req, res) => {
   const skip = (page - 1) * limit;
   const contacts = await Contact.find(
     { owner: _id },
-    "_id name email phone favorite",
+    "_id name email phone favorite image",
     { skip, limit: +limit }
   ).populate("owner", "_id email");
 

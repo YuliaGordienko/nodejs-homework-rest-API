@@ -4,6 +4,7 @@ const add = require("./add");
 const remove = require("./remove");
 const put = require("./put");
 const updateStatus = require("./updateStatus");
+const updateImage = require("./updateImage");
 module.exports = {
   getAll,
   getById,
@@ -11,4 +12,5 @@ module.exports = {
   remove,
   put,
   updateStatus,
+  updateImage,
 };

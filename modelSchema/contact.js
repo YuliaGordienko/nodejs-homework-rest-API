@@ -19,6 +19,10 @@ const contactSchema = Schema({
     type: Schema.Types.ObjectId,
     ref: "user",
   },
+  image: {
+    type: String,
+    require: true,
+  },
 });
 
 const joiContactsSchema = Joi.object({
